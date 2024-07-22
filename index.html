@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        html,body{
+            height: 100%;
+
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            height: auto;
+            background-color: rgba(216, 231, 244, 0.422);
+            padding: 2rem;
+            border-radius: 20px;
+        }
+        .options{
+            display: flex;
+            justify-content: center;
+        }
+        ul{
+            list-style: none;
+        }
+        .head{
+            padding: 0 0 1rem 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        li{
+            font-size: 1.5rem;
+            padding: 1.3rem 1.3rem 1.3rem 0;
+            background-color: rgba(154, 205, 246, 0.463);
+            margin-top: .5rem;
+            border-radius: 10px;
+            font-family: 'Dancing Script', cursive;
+            transition: background-color 0.3s ease;
+        }
+        span{
+            margin-right: 20px;
+            background-color: rgba(216, 7, 7, 0.949);
+            padding: 1.3rem;
+            color: white;
+            border-radius: 10px 0 0 10px;
+            cursor: pointer;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>In Web Design, Css Stands for ?</h1>
+        </div>
+        <div class="options">
+            <ul class="lists">
+                <li><span id="answer">A</span>Cascading Style Sheet</li>
+                <li><span id="wrong">B</span>Cross Style Sheet</li>
+                <li><span id="wrong">C</span>Control Style Sheet</li>
+                <li><span id="wrong">D</span>Copy Style Sheet</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let choices = document.querySelectorAll("span");
+        for (let i of choices) {
+            i.addEventListener("click", function() {
+                
+                choices.forEach(span => {
+                    span.style.backgroundColor = "rgba(216, 7, 7, 0.949)";
+                    span.parentElement.style.backgroundColor = "rgba(154, 205, 246, 0.463)";
+                });
+
+                if (i.id === "answer") {
+                    i.style.backgroundColor = "green";
+                    i.parentElement.style.backgroundColor = "lightgreen";
+                } else {
+                    i.style.backgroundColor = "red";
+                    i.parentElement.style.backgroundColor = "lightcoral";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
